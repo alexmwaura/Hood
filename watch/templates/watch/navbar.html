@@ -1,0 +1,49 @@
+
+<nav class="navbar navbar-expand-md navbar-dark  fixed-top" style="box-shadow: -1px 1px 5px rgb(20, 20, 20);; overflow: hidden; background-color: aliceblue;">
+    <nav class="nav-body">
+        <table class="table" style="font-size:xx-large;" >
+  
+            <tbody class="" >
+              <tr class="table-default" style="text-shadow: 2px 2px 4px rgb(39, 37, 37)">
+                <th><a href="{% url 'index' %}" >Home</a></th>
+                {% if user.is_authenticated %}
+                <td><a href="{% url 'logout' %}">logout</a></td>
+                <td><a href="{% url 'profile' %}" >Profile</a></td>
+                <td><a href="{% url 'create_post' %}">Add Business</a></td>
+                <td><a href="#">Add/Update Location</a></td>
+    
+                <td><a href="#">Amenities</a></td>
+             
+        
+                </td>
+                
+        
+        
+                
+        
+                {%else%}
+                <td><a href="{% url 'login' %}" >login</a></td>
+                {% endif %}
+              </tr>
+              
+    
+            </tbody>
+    
+     
+          </table>
+  
+        </nav>
+  
+        
+      
+  
+  
+  
+    
+  
+  </nav>
+  
+  
+  
+
+
