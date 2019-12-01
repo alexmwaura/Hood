@@ -1,0 +1,58 @@
+{% extends 'watch/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<main role="main" class="container" style="margin-top: 10%; color: #000;">
+        <img src="{{post.user.profile.image.url}}" class="rounded-circle article-img" alt="">
+        <div class="media-body">
+            <div class="article-metadata">
+            </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            
+
+            
+
+            
+                
+            </div>
+
+
+            
+
+
+
+        </div>
+
+        <div class="col-md-6" >
+            <div class="content-section">
+                
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Post</legend>
+                        <div class="card" >
+                            <div class="card-body" >
+                                    {{ form|crispy }}
+                                   <button type="submit" value="Save" class="btn btn-dark">Submit</button> 
+                                    </div>
+
+                        </div>
+                    </fieldset>
+             
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+
+{% endblock %}
