@@ -1,38 +1,40 @@
 
-<nav class="navbar navbar-expand-md navbar-dark  fixed-top" style="box-shadow: -1px 1px 5px rgb(20, 20, 20);; overflow: hidden; background-color: aliceblue;">
-    <nav class="nav-body">
-        <table class="table" style="font-size:xx-large;" >
+
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" rel="stylesheet"
+id="bootstrap-css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<nav class="navbar navbar-expand-md navbar-dark  fixed-top" style="box-shadow: -1px 1px 5px rgb(20, 20, 20);; overflow: hidden; background-color: white">
   
-            <tbody class="" >
-              <tr class="table-default" style="text-shadow: 2px 2px 4px rgb(39, 37, 37)">
-                <th><a href="{% url 'index' %}" >Home</a></th>
-                {% if user.is_authenticated %}
-                <td><a href="{% url 'logout' %}">logout</a></td>
-                <td><a href="{% url 'profile' %}" >Profile</a></td>
-                <td><a href="{% url 'create_post' %}">Add Business</a></td>
-                <td><a href="#">Add/Update Location</a></td>
-    
-                <td><a href="#">Amenities</a></td>
-             
-        
-                </td>
+    <nav class="nav-body" style="background-color: white">
+        <nav class="grey darken-4">
+            <div class="">
+            
+               
+                <a href="{% url 'index' %}">Home</a>
                 
+
         
+                <ul class="right hide-on-med-and-down">
+                   
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}" >logout</a></li>
+                    <li><a href="{% url 'create_post' %}">Add Business</a></li>
+                    <li><a href="{% url 'add_location' user.id %}">Add/Update Location</a></li>
+                    <li><a href="{% url 'create-location' %}">Create Location</a></li>
         
-                
-        
+                    <li><a href="#">Amenities</a></li>
+                 
                 {%else%}
-                <td><a href="{% url 'login' %}" >login</a></td>
+                <li><a href="{% url 'login' %}" >login</a></li>
                 {% endif %}
-              </tr>
               
+            
+                </ul>
+            </div>
     
-            </tbody>
-    
-     
-          </table>
-  
-        </nav>
   
         
       
