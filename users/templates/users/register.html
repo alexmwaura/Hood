@@ -1,0 +1,45 @@
+{% extends 'watch/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="" style="margin-left: 10px; ">
+
+       <div class="container">
+            <div class="card-rows" style="overflow: auto;" >
+
+
+                    
+                   
+                           <div class="col-md-6">
+                                <div class="card" style="box-shadow: 10px 1px 10px -3px rgb(137, 151, 141); overflow: hidden;">
+                                        <div class="content-section">
+                                                <form action="" method="POST" style="text-shadow: -8px 3px 8px rgb(124, 119, 119)" >
+                                                    {% csrf_token %}
+                                                    <fieldset class="form-group">
+                                                        <legend class="border-bottom mb-4">Join Today</legend>
+                                                        {{ form|crispy }}
+                                                    </fieldset>
+                                                    <div class="form-group">
+                                                        <button class="btn btn-default white-text waves-light" type="submit">Sign up</button>
+                                        
+                                                    </div>
+                                                </form>
+                                                <div class="border-top pt-3" style="text-shadow: -5px 3px 3px rgb(124, 119, 119)">
+                                                    <small class="text-muted">Already have an Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a></small>
+                                        
+                                                </div>
+                                        
+                                            </div>
+
+                           </div>
+
+                           </div>
+                   
+                 
+                   </div>
+        
+
+       </div>
+</div>
+
+{% endblock %}
+

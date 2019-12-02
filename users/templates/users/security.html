@@ -1,0 +1,47 @@
+{% extends 'watch/base.html' %}
+
+{% block content %}
+
+{{block.super}}
+
+
+<div class="container">
+
+  <div class="row" style="margin-left: 20%;">
+
+    <div class="col-md-8">
+      {% for security in security%}
+      <div class="col-md-8">
+        <div class="card">
+            <img src="{{security.image.url}}" class="card-img" style="border-radius: 8px;">
+  
+            <div class="card-footer">
+                <p>
+                    <a href="#">{{security.station_name}}</a>
+                    
+                </p>
+  
+            </div>
+        </div>
+
+
+      
+      {% endfor %}
+
+      
+    </div>
+    <div class="col-md-4"> 
+
+    </div>
+  
+
+  </div>
+
+</div>
+
+
+
+
+
+
+  {% endblock %}
