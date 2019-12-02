@@ -1,0 +1,41 @@
+{% extends 'watch/base.html' %}
+
+{% block content %}
+
+{{block.super}}
+
+
+<div class="container">
+
+  <div class="row" style="margin-left: 20%;">
+
+    <div class="col-md-8">
+      <div class="card">
+            <div class="card-header">
+              {{object.location}}
+                <p>{{object.hospital_name}}</p>
+            </div>
+          <img src="{{object.image.url}}" class="card-img" style="border-radius: 8px;">
+
+          <div class="card-footer">
+              <p>
+                  {{object.hospital_details}}
+                  
+
+              </p>
+
+          </div>
+      </div>
+     
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+  {% endblock %}
