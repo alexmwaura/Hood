@@ -1,71 +1,74 @@
+
 {% load static %}
+
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    
-
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144351462-1"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-144351462-1');
-        </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% if title %}
-    <title>{{title}}</title>
-    {% else %}
-    <title> Watch </title>
-    {% endif %}
-
-    {% block styles %}
-
-
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-<!-- JQuery -->
-
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144351462-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-144351462-1');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/happily-colored-snlogo/128/medium.png">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Materialize</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
+
+  <script src="{% static 'node_modules/angular/angular.js' %}" type="text/javascript"></script>
+  {% if title %}
+  <title>{{title}}</title>
+  {% else %}
+  <title> Watch </title>
+  {% endif %}
+
+  {% block styles %}
+
+
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <!-- JQuery -->
+
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 
-    {% endblock %}
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+
+
+
+  {% endblock %}
 </head>
 
 <body>
 
-        <div class="container">
-                {% include 'watch/navbar.html'%}
+  <div class="container">
+    {% include 'watch/navbar.html'%}
 
-        </div>
+  </div>
 
-        <br><br><br><br>
-
-
-    
-
-
-        
-
-
-
-        
-
-    {% block content %}
+  <br><br><br><br>
 
 
 
@@ -77,69 +80,7 @@
 
 
 
-
-    {%endblock%}
-
-    {% block scripts %}
-
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
-
-
-
-
-<script>
-
-
-
-
-
-            if('serviceWorker' in navigator) {
-                window.addEventListener('load', function() {
-                    navigator.serviceWorker.register('/sw.js');
-                });
-            }
-           
-
-
-
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.materialboxed');
-            var instances = M.Materialbox.init(elems, options);
-        });
-
-        // Or with jQuery
-
-        $(document).ready(function () {
-            $('.materialboxed').materialbox();
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.slider');
-            var instances = M.Slider.init(elems, options);
-        });
-
-        // Or with jQuery
-
-        $(document).ready(function () {
-            $('.slider').slider();
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.dropdown-trigger');
-            var instances = M.Dropdown.init(elems, options);
-        });
-
-        // Or with jQuery
-
-        $('.dropdown-trigger').dropdown();
+  {% block content %}
 
 
 
@@ -147,249 +88,362 @@
 
 
 
-$(window).scroll(function(e) {
-
-// add/remove class to navbar when scrolling to hide/show
-var scroll = $(window).scrollTop();
-if (scroll >= 150) {
-    $('.navbar').addClass("navbar-hide");
-} else {
-    $('.navbar').removeClass("navbar-hide");
-}
-
-});
 
 
 
 
 
-if ( $(window).width() > 769) {   
-var mywindow = $(window);
-var mypos = mywindow.scrollTop();
-var up = false;
-var newscroll;
-mywindow.scroll(function () {
-    newscroll = mywindow.scrollTop();
-    if (newscroll > mypos && !up) {
-        $('.slidd').stop().fadeOut(730);
-        up = !up;
-        console.log(up);
-    } else if(newscroll < mypos && up) {
-        $('.slidd').stop().fadeIn(300);
-        up = !up;
+  {%endblock%}
+
+  {% block scripts %}
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js">
+  </script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js');
+      });
     }
-    mypos = newscroll;
-});
-}
-
-
-function myFunction(){
-    var copyText = document.getElementById("myInput");
-
-    copyText.select();
-    document.execCommand('copy');
-
-    alert('Copied: ' + copyText.value);
-}
 
 
 
-
-
-    </script>
-
-
-    <style>
-
-
-
-
-#navbar a {
-  float: left;
-
-}
-
-
-
-@media screen and (max-width: 580px) {
-  #navbar {
-    padding: 20px 10px !important;
-  }
-  #navbar a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  #navbar-right {
-    float: none;
-  }
-}
-
-
-.navbar {
-    transition: top 0.5s ease;
-}
-
-.navbar-hide {
-    top: -56px;
-}
-
-
-/* simplecodetips.com - Static Navbar */
-.navbar-brand { font-size: 21px; font-weight: bolder; }
-.slidd { position: fixed; width: 100%; padding: 0px; margin: 0px; border: 0px; }
-.navbar-custom {
-	background-color: #0c4d8a !important;
-    color: #ffffff;
-  	border-radius: 0;
-}
-  
-
-
-.navbar-nav { background-color: #0c4d8a; font-size: 12.6px; margin-left: 21px; }
-.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus { color: #ffffff; }
-      
-.navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus {
-    text-decoration: none;
-    background-color: #1c5c99;
-}
-      
-.navbar-custom .navbar-brand { color:#fff; }
-.navbar-brand a { color: #fff; }
-.navbar-custom .navbar-toggle { background-color:#eeeeee; }
-.navbar-custom .icon-bar { background-color:#0c4d8a; }
+    $(document).ready(function(){
+    		$('.button-collapse').sideNav({
+		      menuWidth: 300, // Default is 300
+		      edge: 'left', // Choose the horizontal origin
+		      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+		      draggable: true, // Choose whether you can drag to open on touch screens,
+		      onOpen: function(el) { /* Do Stuff*/ }, // A function to be called when sideNav is opened
+		      onClose: function(el) { /* Do Stuff*/ }, // A function to be called when sideNav is closed
+		    }
+		  );
+      		$('.parallax').parallax();
+    	});
 
 
 
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
-@import url(http://fonts.googleapis.com/css?family=Bitter:400);
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems, options);
+    });
 
-html,body {
-	height:100%;
-    background-size: cover;
-    color:#444;
-    font-family: 'Lato', sans-serif;
-}
+    // Or with jQuery
 
-@media (min-width:768px) {
-    h1 {
-        font-size:68px;
+    $(document).ready(function () {
+      $('.materialboxed').materialbox();
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.slider');
+      var instances = M.Slider.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $(document).ready(function () {
+      $('.slider').slider();
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.dropdown-trigger');
+      var instances = M.Dropdown.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $('.dropdown-trigger').dropdown();
+
+
+
+
+
+
+
+    $(window).scroll(function (e) {
+
+      // add/remove class to navbar when scrolling to hide/show
+      var scroll = $(window).scrollTop();
+      if (scroll >= 150) {
+        $('.navbar').addClass("navbar-hide");
+      } else {
+        $('.navbar').removeClass("navbar-hide");
+      }
+
+    });
+
+
+
+
+
+    if ($(window).width() > 769) {
+      var mywindow = $(window);
+      var mypos = mywindow.scrollTop();
+      var up = false;
+      var newscroll;
+      mywindow.scroll(function () {
+        newscroll = mywindow.scrollTop();
+        if (newscroll > mypos && !up) {
+          $('.slidd').stop().fadeOut(730);
+          up = !up;
+          console.log(up);
+        } else if (newscroll < mypos && up) {
+          $('.slidd').stop().fadeIn(300);
+          up = !up;
+        }
+        mypos = newscroll;
+      });
     }
-}
-
-#btn{
-  font-size: 20px;
-}
 
 
-.scroll-down {
-  position: absolute;
-  left: 50%;
-  bottom: 40px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  margin-left: -15px;
-  display: block;
-  padding: 7px;
-  text-align: center;
-  z-index:-1
-}
+    function myFunction() {
+      var copyText = document.getElementById("myInput");
 
-.scroll-up {
-  position: fixed;
-  display: none;
-  z-index: 999;
-  bottom: 2em;
-  right: 2em;
-}
+      copyText.select();
+      document.execCommand('copy');
 
-.scroll-up a {
-  background-color: rgba(135, 135, 135, 0.5);
-  display: block;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  color: #fff;
-  font-size: 15px;
-  line-height: 30px;
-}
+      alert('Copied: ' + copyText.value);
+    }
+  </script>
 
-section {
-	padding-top:70px;  
-    padding-bottom:50px;
-    min-height:100%;
-    min-height:calc(100% - 0);
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-}
 
-@media (min-width:768px) {
-    .v-center {
+  <style>
+    #navbar a {
+      float: left;
+
+    }
+
+
+
+    @media screen and (max-width: 580px) {
+      #navbar {
+        padding: 20px 10px !important;
+      }
+
+      #navbar a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+      #navbar-right {
+        float: none;
+      }
+    }
+
+
+    .navbar {
+      transition: top 0.5s ease;
+    }
+
+    .navbar-hide {
+      top: -56px;
+    }
+
+
+    /* simplecodetips.com - Static Navbar */
+    .navbar-brand {
+      font-size: 21px;
+      font-weight: bolder;
+    }
+
+    .slidd {
+      position: fixed;
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+      border: 0px;
+    }
+
+    .navbar-custom {
+      background-color: #0c4d8a !important;
+      color: #ffffff;
+      border-radius: 0;
+    }
+
+
+
+    .navbar-nav {
+      background-color: #0c4d8a;
+      font-size: 12.6px;
+      margin-left: 21px;
+    }
+
+    .navbar-custom .navbar-nav>.active>a,
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus {
+      color: #ffffff;
+    }
+
+    .navbar-custom .navbar-nav>li>a:hover,
+    .nav>li>a:focus {
+      text-decoration: none;
+      background-color: #1c5c99;
+    }
+
+    .navbar-custom .navbar-brand {
+      color: #fff;
+    }
+
+    .navbar-brand a {
+      color: #fff;
+    }
+
+    .navbar-custom .navbar-toggle {
+      background-color: #eeeeee;
+    }
+
+    .navbar-custom .icon-bar {
+      background-color: #0c4d8a;
+    }
+
+
+
+    @import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+    @import url(http://fonts.googleapis.com/css?family=Bitter:400);
+
+    html,
+    body {
+      height: 100%;
+      background-size: cover;
+      color: #444;
+      font-family: 'Lato', sans-serif;
+    }
+
+    @media (min-width:768px) {
+      h1 {
+        font-size: 68px;
+      }
+    }
+
+    #btn {
+      font-size: 20px;
+    }
+
+
+    .scroll-down {
+      position: absolute;
+      left: 50%;
+      bottom: 40px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      margin-left: -15px;
+      display: block;
+      padding: 7px;
+      text-align: center;
+      z-index: -1
+    }
+
+    .scroll-up {
+      position: fixed;
+      display: none;
+      z-index: 999;
+      bottom: 2em;
+      right: 2em;
+    }
+
+    .scroll-up a {
+      background-color: rgba(135, 135, 135, 0.5);
+      display: block;
+      width: 35px;
+      height: 35px;
+      text-align: center;
+      color: #fff;
+      font-size: 15px;
+      line-height: 30px;
+    }
+
+    section {
+      padding-top: 70px;
+      padding-bottom: 50px;
+      min-height: 100%;
+      min-height: calc(100% - 0);
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
+
+    @media (min-width:768px) {
+      .v-center {
         height: 50%;
         overflow: visible;
         margin: auto;
         position: absolute;
-        top: 0; left: 0; bottom: 0; right: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
     }
-}
-  
-#section1{
-	background-color: rgba(0,0,0,0.7);
-	color:#fff;
-	font-family: 'Bitter', serif;
-}
 
-
-
- 
-.button1 {
-    border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 28px;
-    width: 200px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-  }
-  
-  .button1 .btn {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button1 .btn:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .button1:hover .btn {
-    padding-right: 25px;
-  }
-  
-  .button1:hover .btn:after {
-    opacity: 1;
-    right: 0;
-  }
+    #section1 {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      font-family: 'Bitter', serif;
+    }
 
 
 
 
-    </style>
+    .button1 {
+      border-radius: 4px;
+      background-color: #f4511e;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 28px;
+      width: 200px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .button1 .btn {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .button1 .btn:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .button1:hover .btn {
+      padding-right: 25px;
+    }
+
+    .button1:hover .btn:after {
+      opacity: 1;
+      right: 0;
+    }
+  </style>
 
 
-    {% endblock %}
+  {% endblock %}
 
 </body>
 
